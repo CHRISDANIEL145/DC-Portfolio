@@ -98,11 +98,29 @@ function initContactForm() {
     submitBtn.innerHTML = '<span>Sending...</span>';
 
     try {
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
+      const SUPABASE_URL = 'https://udxnysukqvjfkamgytor.supabase.co';
+      const SUPABASE_ANON_KEY = 'sb_publishable_iA3VJQciyp7PqrgKU6kH6A_8C-TGDAz';
+
+      const company = document.getElementById('f-company')?.value.trim() || null;
+      const service = document.getElementById('f-service')?.value || null;
+
+      const payload = {
+        name: name,
+        email: email,
+        company: company,
+        service: service,
+        message: message
+      };
+
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/contacts`, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
