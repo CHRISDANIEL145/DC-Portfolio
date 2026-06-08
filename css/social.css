@@ -1,0 +1,289 @@
+/* ================================================================
+   SOCIAL PROOF HUB — GitHub · LinkedIn · Hugging Face
+================================================================ */
+
+.social {
+  background: var(--clr-bg);
+  padding-block: var(--section-py);
+}
+
+/* Platform Cards */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-16);
+}
+
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--ease-slow), box-shadow var(--ease-slow), border-color var(--ease-slow);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.platform-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--clr-border);
+  transition: background var(--ease-slow);
+}
+
+.platform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--clr-border-strong);
+}
+
+/* GitHub — orange accent */
+.platform-card:first-child::before { background: var(--clr-dark); }
+.platform-card:first-child:hover { border-color: var(--clr-dark); }
+
+/* LinkedIn — blue accent */
+.platform-card--linkedin::before { background: #0A66C2; }
+.platform-card--linkedin:hover { border-color: #0A66C2; }
+
+/* Hugging Face — yellow accent */
+.platform-card--hf::before { background: var(--clr-accent); }
+.platform-card--hf:hover { border-color: var(--clr-accent); }
+
+.platform-card__top {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.platform-card__logo {
+  width: 42px;
+  height: 42px;
+  color: var(--clr-dark);
+  flex-shrink: 0;
+}
+.platform-card__logo--emoji {
+  font-size: 36px;
+  line-height: 1;
+}
+.platform-card--linkedin .platform-card__logo { color: #0A66C2; }
+
+.platform-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark);
+  letter-spacing: var(--ls-snug);
+  margin-bottom: 2px;
+}
+
+.platform-card__handle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-faint);
+}
+
+.platform-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-5);
+  flex: 1;
+}
+
+.platform-card__stats {
+  display: flex;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.platform-stat {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+}
+.platform-stat strong { color: var(--clr-dark); font-weight: var(--fw-semibold); }
+
+.platform-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-primary);
+  margin-top: auto;
+  transition: gap var(--ease-fast);
+}
+.platform-card:hover .platform-card__cta { gap: var(--sp-3); }
+
+/* ---- GitHub Activity Heatmap ---- */
+.gh-activity {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  margin-bottom: var(--sp-10);
+  overflow: hidden;
+}
+
+.gh-activity__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-6);
+}
+
+.gh-activity__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark);
+  letter-spacing: var(--ls-snug);
+}
+
+.gh-activity__year {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-faint);
+}
+
+.gh-activity__canvas-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gh-activity__canvas-wrap canvas {
+  min-width: 600px;
+  display: block;
+}
+
+.gh-activity__legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.gh-legend-label {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-faint);
+}
+
+.gh-legend-dots { display: flex; gap: var(--sp-1); }
+
+.gh-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--clr-primary);
+  opacity: var(--lvl);
+}
+
+/* ---- Repositories Grid ---- */
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5) var(--sp-6);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--ease-base), box-shadow var(--ease-base), border-color var(--ease-base);
+}
+.repo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-primary);
+}
+
+.repo-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--clr-text-muted);
+}
+
+.repo-card__name {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-primary);
+}
+
+.repo-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  flex: 1;
+}
+
+.repo-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--clr-border);
+}
+
+.repo-lang {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.lang-dot--py { background: #3776AB; }
+
+.repo-stars {
+  font-size: var(--fs-xs);
+  color: var(--clr-accent);
+  font-weight: var(--fw-semibold);
+}
+
+.repo-live {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--clr-secondary);
+  letter-spacing: 0.02em;
+}
+
+.social__cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .platform-grid { grid-template-columns: 1fr; }
+  .repos-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .gh-activity { padding: var(--sp-5); }
+}

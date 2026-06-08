@@ -1,0 +1,135 @@
+/* ================================================================
+   AI LABORATORY — Skills & Technologies
+================================================================ */
+
+.lab {
+  position: relative;
+  background: var(--clr-lab-bg);
+  overflow: hidden;
+  padding-block: var(--section-py);
+}
+
+.lab__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.lab__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(28, 23, 20, 0.2) 0%, rgba(28, 23, 20, 0.65) 100%),
+    linear-gradient(to bottom, var(--clr-lab-bg) 0%, transparent 15%, transparent 85%, var(--clr-lab-bg) 100%);
+  pointer-events: none;
+}
+
+.lab__container {
+  position: relative;
+  z-index: 2;
+}
+
+.lab__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+/* Lab Station Card */
+.lab__station {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--clr-lab-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  transition: background var(--ease-slow), border-color var(--ease-slow), transform var(--ease-slow);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.lab__station::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  opacity: 0;
+  transition: opacity var(--ease-slow);
+}
+
+.lab__station:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-4px);
+}
+.lab__station:hover::before { opacity: 1; }
+
+.lab__station-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.lab__station-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lab__station-icon--orange {
+  background: rgba(247, 92, 26, 0.12);
+  border: 1px solid rgba(247, 92, 26, 0.2);
+}
+
+.lab__station-icon--green {
+  background: rgba(0, 200, 150, 0.10);
+  border: 1px solid rgba(0, 200, 150, 0.18);
+}
+
+.lab__station-icon--gold {
+  background: rgba(255, 184, 0, 0.10);
+  border: 1px solid rgba(255, 184, 0, 0.18);
+}
+
+.lab__station-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: var(--ls-snug);
+  line-height: 1.2;
+}
+
+.lab__station-desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-lab-muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-5);
+}
+
+.lab__tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .lab__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .lab__grid { grid-template-columns: 1fr; }
+  .lab__station { padding: var(--sp-6); }
+}
