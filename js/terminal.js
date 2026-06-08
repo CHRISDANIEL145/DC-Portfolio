@@ -58,7 +58,8 @@ const TERMINAL_RESPONSES = {
     lines: [
       '> Retrieving contact information...',
       '',
-      '📧 Email   : daniel@danielchristopher.dev',
+      '📧 Email   : dc318832@gmail.com',
+      '📱 Phone   : 9345571716',
       '🐙 GitHub  : github.com/CHRISDANIEL145',
       '💼 LinkedIn: linkedin.com/in/danielchristopherm',
       '🤗 HF      : huggingface.co/Danielchris145',

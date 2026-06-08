@@ -137,7 +137,7 @@ function initContactForm() {
     } catch (err) {
       submitBtn.disabled = false;
       submitBtn.innerHTML = `Send Message <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-      alert('Something went wrong. Please email daniel@danielchristopher.dev directly.');
+      alert('Something went wrong. Please email dc318832@gmail.com directly.');
     }
   });
 }
