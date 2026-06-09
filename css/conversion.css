@@ -363,6 +363,7 @@
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .benefits-grid  { grid-template-columns: repeat(2, 1fr); }
+  .intl-grid      { grid-template-columns: repeat(2, 1fr); }
   .case-studies   { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .process-timeline {
@@ -378,6 +379,7 @@
 }
 @media (max-width: 640px) {
   .benefits-grid { grid-template-columns: 1fr; }
+  .intl-grid { grid-template-columns: 1fr; }
   .cta-banner { padding: var(--sp-12) var(--sp-6); border-radius: var(--r-xl); }
   .case-study__metrics { grid-template-columns: 1fr; }
 }

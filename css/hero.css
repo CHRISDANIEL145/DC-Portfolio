@@ -184,7 +184,7 @@
 }
 
 @media (max-width: 480px) {
-  .hero { height: 100svh; }
+  .hero { height: auto; min-height: 100svh; padding-bottom: 120px; }
   .hero__headline { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .hero__actions { flex-direction: column; width: 100%; max-width: 300px; }
   .hero__actions .btn { justify-content: center; }

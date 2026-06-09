@@ -157,6 +157,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -169,6 +170,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ---- Typography ---- */
@@ -178,6 +180,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-tight);
   color: var(--clr-dark);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 p { line-height: var(--lh-relaxed); }
