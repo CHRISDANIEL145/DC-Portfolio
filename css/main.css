@@ -30,6 +30,7 @@
 .nav__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--sp-8);
   max-width: var(--container-max);
   margin-inline: auto;
