@@ -173,9 +173,25 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
+  .hero__content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero__actions {
+    justify-content: center;
+    width: 100%;
+  }
+
   .hero__stats {
-    gap: var(--sp-5);
+    gap: var(--sp-6);
     flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero__stat {
+    align-items: center;
+    text-align: center;
   }
 
   .hero__stat-value { font-size: var(--fs-2xl); }
